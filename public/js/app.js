@@ -3,6 +3,7 @@ const input = document.querySelector("input");
 const messageOne = document.querySelector("#message-1");
 const messageTwo = document.querySelector("#message-2");
 
+
 messageOne.textContent = "";
 messageTwo.textContent = "";
 
@@ -12,7 +13,7 @@ weatherForm.addEventListener("submit", (e) => {
   messageTwo.textContent = "";
 
   const location = input.value;
-  fetch(`http://localhost:3000/weather?address=${location}`).then(
+  fetch(`/weather?address=${location}`).then(
     (response) => {
       response.json().then((data) => {
         if (data.error) {
